@@ -1,0 +1,16 @@
+{
+  "name": "openalias",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bitcore-message": "github:encrypt-s/bitcore-message",
+    "ejs": "^2.5.9",
+    "util": "^0.11.0"
+  }
+}

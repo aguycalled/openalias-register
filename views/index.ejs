@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NavCoin OpenAlias</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <fieldset>
+      <div style="width:100%; text-align: center; margin-bottom:30px">
+      <div style="width:100%; text-align: center; margin-bottom:30px; color:red"><%= error %></div>
+      <img src="https://github.com/NAVCoin/navcoin-core/raw/master/img/logo-extended.png" width=200></div>
+<% if(step == 0){ %>
+        <form action="/" method="post">
+          <div style="width:100%; text-align: center">
+          You can now register a completely free OpenAlias address!<br>
+          Please choose your user name (your OpenAlias address will be username@nav.community) and your real NavCoin address.<br>
+          </div>
+          <input name="email" type="text" class="ghost-input reduced" placeholder="Username" required>
+          <input name="address" type="text" class="ghost-input" placeholder="NavCoin address" required>
+          <input type="submit" class="ghost-button" value="Next">
+        </form>
+      </fieldset>
+<% } else if (step == 1) {%>
+        <form action="/" method="post">
+          <div style="width:100%; text-align: center">
+          Open your NavCoin wallet.<br>
+          Open the console through <b>Help -> Debug Window </b><br>
+          Type <b>signmessage <%= address %> <%= email %>@nav.community</b> and hit <b>enter</b><br>
+          Paste the response here:<br>
+          </div>
+          <input name="email" type="hidden" value="<%=email %>">
+          <input name="address" type="hidden" value="<%=address %>">
+          <input name="signature" type="text" class="ghost-input" placeholder="Signature" required>
+          <input type="submit" class="ghost-button" value="Verify">
+        </form>
+      </fieldset>
+<% } else if (step == 2) {%>
+          <div style="width:100%; text-align: center">
+          <b><%= email %>@nav.community</b> has been registered as an OpenAlias address!<br>
+          Coins will be received at <b><%= address %></b>.<br>
+          Please allow up to 10 minutes for the address to be active.
+          </div>
+<% }%>
+    </div>
+    <div style="width:100%; text-align: center; margin-bottom:30px"><a href="http://www.openalias.org">What is OpenAlias?</a></div>
+  </body>
+</html> 

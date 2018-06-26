@@ -1,0 +1,6 @@
+{
+  "port": 8081,
+  "user": "max",
+  "password": "b1g",
+  "url": "https://mydnsadmin.org/admin/dns/custom/%s/%s"
+}
