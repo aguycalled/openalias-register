@@ -28,11 +28,12 @@
           <div style="width:100%; text-align: center">
           Open your NavCoin wallet.<br>
           Open the console through <b>Help -> Debug Window </b><br>
-          Type <b>signmessage <%= address %> <%= email %>@nav.community</b> and hit <b>enter</b><br>
+          Type <b>signmessage <%= prevaddress %> <%= email %>@nav.community</b> and hit <b>enter</b><br>
           Paste the response here:<br>
           </div>
           <input name="email" type="hidden" value="<%=email %>">
           <input name="address" type="hidden" value="<%=address %>">
+          <input name="prevaddress" type="hidden" value="<%=prevaddress %>">
           <input name="signature" type="text" class="ghost-input" placeholder="Signature" required>
           <input type="submit" class="ghost-button" value="Verify">
         </form>
