@@ -56,7 +56,7 @@ app.post('/', function (req, res) {
           if(!boolMessage) {
             res.render('index', {step: 1, error: 'Wrong signature', prevaddress: req.body.prevaddress, address: req.body.address, email: req.body.email});
           } else {
-            request({ url: util.format(config.url, req.body.email+".nav.community", "txt"), method: "POST", headers: { "Authorization": auth }, body: "oa1:nav recipient_address="+req.body.address+";" }, function (err, response, body) {
+            request({ url: util.format(config.url, req.body.email+".nav.community", "txt"), method: "PUT", headers: { "Authorization": auth }, body: "oa1:nav recipient_address="+req.body.address+";" }, function (err, response, body) {
               if(err){
                 res.render('index', {step: 1, error: 'Internal error', prevaddress: req.body.address, address: req.body.address, email: req.body.email});
               } else {
